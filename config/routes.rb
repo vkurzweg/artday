@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'static_pages#index'
+
+  get '/artists', to: 'artists#index'
+  get '/galleries', to: 'galleries#index'
+  get 'exhibitions', to: 'exhibitions#index'
+
+  resources :galleries, only: :index do
+    resources :artists, only: :index do
+      resources :exhibitions do
+       end
+    end
+  end
 
   resources :users, only: [:index, :new, :create]
 
@@ -8,6 +19,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

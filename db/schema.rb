@@ -11,10 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915233550) do
+ActiveRecord::Schema.define(version: 20160917023110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "gallery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "artists", ["gallery_id"], name: "index_artists_on_gallery_id", using: :btree
+
+  create_table "exhibitions", force: :cascade do |t|
+    t.string   "name"
+    t.date     "opening"
+    t.date     "closing"
+    t.text     "description"
+    t.string   "image"
+    t.integer  "gallery_id"
+    t.integer  "artist_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "exhibitions", ["artist_id"], name: "index_exhibitions_on_artist_id", using: :btree
+  add_index "exhibitions", ["gallery_id"], name: "index_exhibitions_on_gallery_id", using: :btree
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.integer  "zip"
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -24,4 +57,7 @@ ActiveRecord::Schema.define(version: 20160915233550) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "artists", "galleries"
+  add_foreign_key "exhibitions", "artists"
+  add_foreign_key "exhibitions", "galleries"
 end

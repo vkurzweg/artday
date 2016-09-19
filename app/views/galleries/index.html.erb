@@ -1,0 +1,18 @@
+<div class="container-galleries">
+  <h1>Galleries in Los Angeles</h1>
+
+<div class="container">
+  <div class="list-group">
+   <% @galleries.each do |gallery| %>
+    <tr>
+        <td><%= gallery.name %></td><br>
+        <td><%= gallery.address gallery.zip %></td><br>
+        <td><%= gallery.website %></td><br>
+        <!-- link to upcoming exhibitions -->
+    </tr>
+      <% end %>
+  </div>
+
+</div>
+
+</div>
