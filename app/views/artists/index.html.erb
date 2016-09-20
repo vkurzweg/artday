@@ -4,8 +4,8 @@
   <div class="list-group">
    <% @artists.each do |artist| %>
 <tr>
-    <td><%= artist.name %></td><br>
-    <!-- link to exhibition -->
+    <td><%= link_to "#{artist.name}", "/exhibitions##{artist.name}"%>
+</td><br>
 </tr>
   <% end %>
   </div>

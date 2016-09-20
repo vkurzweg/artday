@@ -3,19 +3,19 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get '/artists', to: 'artists#index'
-  get '/galleries', to: 'galleries#index'
-  get 'exhibitions', to: 'exhibitions#index'
 
-  resources :galleries, only: :index do
+  resources :exhibitions, only: [:index, :create, :new]
+
+
+  resources :galleries, only: [:index, :show] do
     resources :artists, only: :index do
-      resources :exhibitions do
-       end
+      resources :exhibitions, except: [:index, :create]
     end
   end
 
   resources :users, only: [:index, :new, :create]
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: :create
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'

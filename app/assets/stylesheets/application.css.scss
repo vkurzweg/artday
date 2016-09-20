@@ -27,6 +27,8 @@ $container-max-widths: (
   xl: 1140px
 );
 
+// Home Page
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   background: #FCFCFC;
@@ -44,8 +46,13 @@ img {
   padding: 10px;
 }
 
-.container {
-  margin-right: 15px;
+#home-page {
+  margin: 10px 25px 10px 10px;
+}
+
+
+.display-container {
+  border-bottom: .5px solid #626065;
 }
 
 .container-artists {
@@ -53,12 +60,37 @@ img {
 }
 
 .container-galleries {
-  margin-left: 250px;
+  text-align: center;
 }
 
+.map {
+  margin-left: 200px;
+  width: 60vw;
+  height: 60vh;
+  border: .5px solid black;
+  margin-bottom: 10px;
+}
 
+#exhibit-head {
+  text-align: center;
+}
+
+.exhibition-name {
+  font-style: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+#gallery-artist, #opening-closing {
+  font-size: 18px;
+}
 
 /* The side navigation menu */
+.login-logout {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */

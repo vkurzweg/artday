@@ -2,21 +2,24 @@ class ExhibitionsController < ApplicationController
 
 def index
   @exhibitions = Exhibition.all
-  @galleries = @gallery.exhibitions
-  @artists = @gallery.artists.exhibitions
+  # @galleries = @gallery.exhibitions.all
+  # @artists = @gallery.artists.exhibitions.all
 end
 
 def new
   @exhibition = Exhibition.new
-  @gallery = @gallery.exhibition.new
-  @artist = @artist.exhibition.new
+  @gallery = Gallery.new
+  @artist = @gallery.artists.new
 end
 
 def create
-  @gallery = Gallery.find(params[:gallery_id])
   @exhibition = Exhibition.new exhibition_params
-  if @exhibition.save
-    redirect_to exhibitions_path, notice: "Thanks for contributing!"
+  @artist = Artist.new params.require(:exhibition).require(:artists).permit(:name)
+  @gallery = Gallery.new params.require(:exhibition).require(:galleries).permit(:name, :address, :zip, :website)
+  @exhibition.gallery = @gallery
+  @exhibition.artist = @artist
+  if @exhibition.save && @artist.save && @gallery.save
+    redirect_to exhibitions_path, notice: "Submission received. Thank you!"
   else
     render 'new'
   end
@@ -26,14 +29,14 @@ def edit
   @exhibition = Exhibition.find(params[:id])
 end
 
-def update
-  @exhibition = Exhibition.find(params[:id])
-  if @exhibition update_attributes(exhibition_params)
-    redirect_to gallery_path(@exhibition.gallery_id)
-  else
-    render 'edit'
-  end
-end
+# def update
+#   @exhibition = Exhibition.find(params[:id])
+#   if @exhibition update_attributes(exhibition_params)
+#     redirect_to gallery_path(@exhibition.gallery_id)
+#   else
+#     render 'edit'
+#   end
+# end
 
 def destroy
   @exhibition = Exhibition.find(params[:id])
@@ -44,7 +47,8 @@ end
 private
 
 def exhibition_params
-      params.require(:exhibition).permit(:name, :opening, :closing, :description)
+      params.require(:exhibition)
+        .permit(:name, :opening, :closing, :description, :image)
     end
 
 end

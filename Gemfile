@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 
+gem "paperclip", "~> 5.0.0"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -41,6 +43,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

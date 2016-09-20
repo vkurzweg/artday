@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -19,9 +20,9 @@
   <a href="/artists">Artists</a>
   <a href=""></a>
   <a href=""></a>
-  <p>
+  <p class="login-logout">
   <% if current_user %>
-    Welcome, <%= current_user.name %>
+    <%= link_to 'Contribute', new_exhibition_path %>
     <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
   <% else %>
     <%= link_to 'Log In', login_path %>
