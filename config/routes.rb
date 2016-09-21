@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   get '/artists', to: 'artists#index'
 
-  resources :exhibitions, only: [:index, :create, :new]
+  resources :exhibitions, only: [:index, :create, :new, :destroy]
 
 
-  resources :galleries, only: [:index, :show] do
+  resources :galleries, only: [:index, :show, :destroy] do
     resources :artists, only: :index do
       resources :exhibitions, except: [:index, :create, :new]
     end

@@ -1,7 +1,7 @@
 class ExhibitionsController < ApplicationController
 
 def index
-  @exhibitions = Exhibition.all
+  @exhibitions = Exhibition.all.order(params[:sort] == 'opening' ? 'opening' : 'closing')
 end
 
 def new
