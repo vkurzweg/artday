@@ -1,0 +1,64 @@
+<div class="add-background">
+  <% @exhibition.errors.full_messages.each do |message| %>
+    <p class="text-danger"><strong><%= message %></strong></p>
+  <% end %>
+  <%= form_for [@exhibition.gallery, @exhibition.artist, @exhibition] do |f| %>
+    <div class="row">
+      <div class="field col-md-3">
+        <%= f.label "Exhibition Name: " %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field col-md-3">
+        <%= f.label "Opening: " %><br>
+        <%= f.date_field :opening %>
+      </div>
+      <div class="field col-md-3">
+        <%= f.label "Closing: " %><br>
+        <%= f.date_field :closing %>
+      </div>
+      <div class="field col-md-3">
+        <%= f.label "Description: " %><br>
+        <%= f.text_field :description %>
+      </div>
+        <div class="field col-md-3">
+        <%= f.label "Image: " %><br>
+        <%= f.file_field :photo %>
+      </div>
+      <%= f.fields_for :gallery do |gallery_form| %>
+      <div class="field col-md-3">
+        <%= gallery_form.label "Gallery: " %><br>
+        <%= gallery_form.text_field :name %>
+      </div>
+      <div class="field col-md-3">
+        <%= gallery_form.label "Gallery Address: " %><br>
+        <%= gallery_form.text_field :address %>
+      </div>
+      <div class="field col-md-3">
+        <%= gallery_form.label "Gallery Zip: " %><br>
+        <%= gallery_form.text_field :zip %>
+      </div>
+      <div class="field col-md-3">
+        <%= gallery_form.label "Gallery Website: " %><br>
+        <%= gallery_form.text_field :website %>
+      </div>
+      <% end %>
+      <%= f.fields_for :artist do |artist_form| %>
+      <div class="field col-md-3">
+        <%= artist_form.label "Artist: " %><br>
+        <%= artist_form.text_field :name %>
+      </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2">
+        <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          Submit Edits
+        <% end %>
+      </div>
+      <div class="col-md-2">
+        <%= link_to 'Back', exhibitions_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -48,14 +48,14 @@
         </div>
       </div>
     </div>
+    <% if current_user %>
+   <%= link_to 'Edit', edit_gallery_artist_exhibition_path(exhibition.gallery, exhibition.artist, exhibition) %>
+     <!-- link_to 'Delete', delete_exhibition_path  -->
 
     </div>
-    <% if current_user %>
-    <!-- link_to 'Edit', edit_gallery_artist_exhibition_path -->
-     <!-- link_to 'Delete', delete_exhibition_path  -->
   </div>
-          <% end %>
-          <% end %>
+        <% end %>
+      <% end %>
 </div>
 <hr>
 

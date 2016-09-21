@@ -27,14 +27,14 @@ def edit
   @exhibition = Exhibition.find(params[:id])
 end
 
-# def update
-#   @exhibition = Exhibition.find(params[:id])
-#   if @exhibition update_attributes(exhibition_params)
-#     redirect_to gallery_path(@exhibition.gallery_id)
-#   else
-#     render 'edit'
-#   end
-# end
+def update
+  @exhibition = Exhibition.find(params[:id])
+  if @exhibition update_attributes(exhibition_params)
+    redirect_to gallery_path(@exhibition.gallery_id)
+  else
+    render 'edit'
+  end
+end
 
 def destroy
   @exhibition = Exhibition.find(params[:id])
