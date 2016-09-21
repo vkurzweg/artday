@@ -1,10 +1,9 @@
-
-  <div id="home-page" class="container">
-   <% @exhibitions.each do |exhibition| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to image_tag(exhibition.image), "/exhibitions##{exhibition.name}"%>
-    </div>
-    <% end %>
+<div id="home-page" class="container">
+ <% @exhibitions.each do |exhibition| %>
+  <div class="col-xs-6 col-md-3">
+    <%= link_to image_tag(exhibition.image), "/exhibitions#exhibition_#{exhibition.id}"%>
+  </div>
+  <% end %>
 </div>
 
 

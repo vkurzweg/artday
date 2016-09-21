@@ -1,15 +1,12 @@
 <div class="container-artists">
   <h1>Featured Artists</h1>
-
   <div class="list-group">
-   <% @artists.each do |artist| %>
-<tr>
-    <td><%= link_to "#{artist.name}", "/exhibitions##{artist.name}"%>
-</td><br>
-</tr>
+    <% @artists.each do |artist| %>
+    <tr>
+      <td><%= link_to "#{artist.name}", "/exhibitions#artist_#{artist.id}"%></td><br>
+    </tr>
   <% end %>
   </div>
-
 </div>
 
 
