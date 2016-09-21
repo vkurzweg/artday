@@ -2,7 +2,7 @@
   <% @exhibition.errors.full_messages.each do |message| %>
     <p class="text-danger"><strong><%= message %></strong></p>
   <% end %>
-  <%= form_for @exhibition do |f| %>
+  <%= form_for @exhibition, html: { multipart: true } do |f| %>
     <div class="row">
       <div class="field col-md-3">
         <%= f.label "Exhibition Name: " %><br>
@@ -22,7 +22,7 @@
       </div>
         <div class="field col-md-3">
         <%= f.label "Image: " %><br>
-        <%= f.text_field :image %>
+        <%= f.file_field :photo %>
       </div>
       <%= f.fields_for :galleries do |gallery_form| %>
       <div class="field col-md-3">
@@ -52,12 +52,12 @@
     <br>
     <div class="row">
       <div class="col-md-2">
-        <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+        <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
           Add Info
         <% end %>
       </div>
       <div class="col-md-2">
-        <%= link_to 'Back', exhibitions_path, class:"btn btn-danger" %>
+        <%= link_to 'Back', exhibitions_path, class:"btn btn-primary" %>
       </div>
     </div>
   <% end %>

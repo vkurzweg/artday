@@ -9,28 +9,54 @@
 
     <div  class="row display-container">
       <div class="col-xs-6 col-md-4">
-         <%=image_tag(exhibition.image)%>
+        <% if exhibition.image.nil? %>
+          <%=image_tag(exhibition.photo.url(:thumb))%>
+        <% else %>
+          <%=image_tag(exhibition.image)%>
+        <% end %>
       </div>
 
-    <div class="col-xs-6 col-md-4">
-      <table>
-          <tr><%= exhibition.gallery.name %></tr><br>
-          <tr id="<%=exhibition.artist.name%>"><%= exhibition.artist.name %></tr><br>
-          <tr></tr><br>
-      </table>
+    <div id="info-container">
+      <div class="col-xs-6 col-md-4">
+        <table id="gallery-artist">
+            <tr><%= link_to "#{exhibition.gallery.name}", "/galleries##{exhibition.gallery.name}"%></tr><br>
+            <tr id="<%=exhibition.artist.name%>"><%= "Artist: #{exhibition.artist.name}" %></tr><br>
+            <tr></tr><br>
+        </table>
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <table id="opening-closing">
+            <tr><%= "Opening: #{exhibition.opening}" %></tr><br>
+            <tr><%= "Closing: #{exhibition.closing}" %></tr><br>
+            <tr></tr><br>
+        </table>
+      </div>
     </div>
 
-    <div class="col-xs-6 col-md-4">
-      <table id="opening-closing">
-          <tr><%= "Opening: #{exhibition.opening}" %></tr><br>
-          <tr><%= "Closing: #{exhibition.closing}" %></tr><br>
-          <tr></tr><br>
-      </table>
+    <div id="more-button">
+      <p>
+      <% unless exhibition.description.nil? %>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exb<%=exhibition.id%>" aria-expanded="false" aria-controls="collapseExample">
+        More Info
+        </button>
+        <% end %>
+      </p>
+      <div class="collapse" id="exb<%=exhibition.id%>">
+        <div class="card card-block">
+          <%= exhibition.description %>
+        </div>
+      </div>
     </div>
+
     </div>
-    </div>
-          <% end %>
+    <% if current_user %>
+    <!-- link_to 'Edit', edit_gallery_artist_exhibition_path -->
+     <!-- link_to 'Delete', delete_exhibition_path  -->
   </div>
+          <% end %>
+          <% end %>
+</div>
 <hr>
 
 </div>

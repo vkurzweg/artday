@@ -47,7 +47,7 @@ img {
 }
 
 #home-page {
-  margin: 10px 25px 10px 10px;
+  margin-left: 100px;
 }
 
 
@@ -77,12 +77,21 @@ img {
 
 .exhibition-name {
   font-style: bold;
-  font-size: 20px;
+  font-size: 22px;
   text-align: center;
 }
 
-#gallery-artist, #opening-closing {
-  font-size: 18px;
+.display-container {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#info-container {
+  margin-top: 50px;
+}
+
+#more-button {
+  margin-left: 400px;
 }
 
 /* The side navigation menu */

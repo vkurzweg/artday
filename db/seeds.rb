@@ -21,50 +21,10 @@ galleries = Gallery.create ([
 
   ])
 
-# galleries[0].artists.create (
-#   {name: "Marnie Weber"}
-#   )
 
-# galleries[1].artists.create ([
-#   {name: ""},
-#   {name: ""},
-#   {name: ""}
-#   ])
-
-# galleries[2].artists.create (
-#   {name: ""}
-#   )
-
-# galleries[3].artists.create ([
-#   {name: ""},
-#   {name: ""}
-#   ])
-
-# galleries[4].artists.create ([
-#   {name: ""},
-#   {name: ""},
-#   {name: ""}
-#   ])
-
-# galleries[5].artists.create (
-#   {name: ""}
-#   )
-
-# galleries[6].artists.create (
-#   {name: ""}
-#   )
-
-# galleries[7].artists.create (
-#   {name: ""}
-#   )
-
-# galleries[8].artists.create ([
-#   {name: ""},
-#   {name: ""}
-#   ])
 
 galleries[0].exhibitions.create (
-  {name: "Chapel of the Moon", opening: Date.parse('17/9/2016'), closing: Date.parse('5/11/2016'), description: "Gavlak is pleased to present Chapel of the Moon, a solo exhibition of new work by Los Angeles based artist Marnie Weber. The artist’s practice, which encompasses painting, collage, photography, video, sculpture, and performance art, often centers around a mythical cast of human, animal, and hybrid characters, who live in a world that exists somewhere between fantasy and reality. Her vivid and surreal theatrical works invite a deep and oftentimes dark exploration of the subconscious, giving voice to one’s inner turmoil and creating a place in which a person can act on their basic human instincts. Interested in the balance between light and darkness, good and evil, Weber creates characters that are constantly inhabited by and pulled between opposing forces.", image: "gavlak917.jpg",
+  {name: "Chapel of the Moon", opening: Date.parse('17/9/2016'), closing: Date.parse('5/11/2016'), description: "Gavlak is pleased to present Chapel of the Moon, a solo exhibition of new work by Los Angeles based artist Marnie Weber. The artist’s practice, which encompasses painting, collage, photography, video, sculpture, and performance art, often centers around a mythical cast of human, animal, and hybrid characters, who live in a world that exists somewhere between fantasy and reality. Her vivid and surreal theatrical works invite a deep and oftentimes dark exploration of the subconscious, giving voice to one’s inner turmoil and creating a place in which a person can act on their basic human instincts.", image: "gavlak917.jpg",
   artist: Artist.create(name: "Marnie Weber")})
 
 galleries[1].exhibitions.create (

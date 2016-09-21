@@ -2,8 +2,6 @@ class ExhibitionsController < ApplicationController
 
 def index
   @exhibitions = Exhibition.all
-  # @galleries = @gallery.exhibitions.all
-  # @artists = @gallery.artists.exhibitions.all
 end
 
 def new
@@ -48,7 +46,7 @@ private
 
 def exhibition_params
       params.require(:exhibition)
-        .permit(:name, :opening, :closing, :description, :image)
+        .permit(:name, :opening, :closing, :description, :image, :photo)
     end
 
 end

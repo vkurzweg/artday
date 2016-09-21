@@ -5,7 +5,7 @@
   <div class="map"></div>
   <div class="list-group-galleries">
    <% @galleries.each do |gallery| %>
-    <tr>
+    <tr id="<%=gallery.name%>">
         <td><%= gallery.name %></td><br>
         <td><%= gallery.address %> <%= gallery.zip %></td><br>
         <td><%= link_to gallery.website %></td><br>

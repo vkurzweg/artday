@@ -29,7 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 
-gem "paperclip", "~> 5.0.0"
+gem 'paperclip', '~> 5.0.0'
+gem 'aws-sdk', '~> 2.3'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -46,6 +47,8 @@ group :development do
   gem 'pry'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  gem 'dotenv-rails'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
