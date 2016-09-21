@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :galleries, only: [:index, :show] do
     resources :artists, only: :index do
-      resources :exhibitions, except: [:index, :create]
+      resources :exhibitions, except: [:index, :create, :new]
     end
   end
 

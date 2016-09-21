@@ -30,7 +30,7 @@ end
 def update
   @exhibition = Exhibition.find(params[:id])
   if @exhibition.update_attributes(exhibition_params)
-    redirect_to gallery_path(@exhibition.gallery_id)
+    redirect_to exhibitions_path
   else
     render 'edit'
   end

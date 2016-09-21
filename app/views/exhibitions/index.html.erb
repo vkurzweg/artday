@@ -5,30 +5,23 @@
     <% @exhibitions.each do |exhibition| %>
 
       <div id="exhibition_<%= exhibition.id %>">
-        <h3 class="exhibition-name"><%= exhibition.name %></h3>
+        <h3 class="exhibition-name"><%= exhibition.name || "No Name" %></h3>
 
         <div  class="row display-container">
           <div class="col-xs-6 col-md-4">
-            <%= link_to 'Edit', edit_gallery_artist_exhibition_path(exhibition.gallery, exhibition.artist, exhibition) if current_user %>
-            <%= exhibition.image.nil? ? image_tag(exhibition.photo.url(:thumb)) : image_tag(exhibition.image) %>
+            <%= link_to 'Edit', edit_gallery_artist_exhibition_path(exhibition.gallery, exhibition.artist, exhibition) if current_user %><br>
+            <%= link_to 'Delete', exhibitions_path(@exhibition), method: :delete, data: { confirm: "Are you sure you want to delete #{exhibition.name}?"} if current_user %>
+            <%= exhibition.image.nil? ? "" : image_tag(exhibition.image) %>
           </div>
           <div class="col-xs-6 col-md-4">
             <table class="gallery-artist">
-              <tr><td><%= link_to "#{exhibition.gallery.name}", "/galleries##{exhibition.gallery.name}"%></td></tr>
+              <tr><td><%= link_to "#{exhibition.gallery.name}", "/galleries/#{exhibition.gallery.id}"%></td></tr>
               <tr id="artist_<%= exhibition.artist.id %>"><td><%= "Artist: #{exhibition.artist.name}" %></td></tr>
-              <tr></tr>
             </table>
-          </div><!-- info-container -->
-          <div class="col-xs-6 col-md-4">
-            <table class="opening-closing">
-              <tr><td><%= "Opening: #{exhibition.opening}" %></td></tr>
-              <tr><td><%= "Closing: #{exhibition.closing}" %></td></tr>
-              <tr></tr>
-            </table>
-            <div>
+            <div id="more-button">
               <p>
                 <% unless exhibition.description.nil? %>
-                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exb<%=exhibition.id%>" aria-expanded="false" aria-controls="collapseExample">More Info</button>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exb<%= exhibition.id %>" aria-expanded="false" aria-controls="#exb<%= exhibition.id %>">More Info</button>
                 <% end %>
               </p>
               <div class="collapse" id="exb<%= exhibition.id %>">
@@ -37,6 +30,12 @@
                 </div>
               </div><!-- exhb id -->
             </div><!-- more-button -->
+          </div><!-- info-container -->
+          <div class="col-xs-6 col-md-4">
+            <table class="opening-closing">
+              <tr><td><%= "Opening: #{exhibition.opening}" %></td></tr>
+              <tr><td><%= "Closing: #{exhibition.closing}" %></td></tr>
+            </table>
           </div>
         </div><!-- row display-container -->
 

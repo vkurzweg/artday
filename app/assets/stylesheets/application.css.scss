@@ -59,7 +59,11 @@ img {
   margin-left: 250px;
 }
 
-.container-galleries {
+#g-head {
+  text-align: center;
+}
+
+.galleries {
   text-align: center;
 }
 
@@ -67,7 +71,6 @@ img {
   margin-left: 200px;
   width: 60vw;
   height: 60vh;
-  border: .5px solid black;
   margin-bottom: 10px;
 }
 
@@ -88,6 +91,35 @@ img {
 
 .gallery-artist {
   margin-top: 50px;
+}
+
+#more-button {
+  margin: 10px;
+}
+
+.opening-closing {
+  margin-top: 50px;
+}
+
+#gallery-name {
+  font-style: bold;
+  font-size: 18px;
+}
+
+#show-head {
+  text-align: center;
+}
+
+#ex-show-header {
+  text-align: center;
+}
+
+#show-ex {
+  margin-top: 50px;
+}
+
+.ex-show-info {
+  margin-top: 35px;
 }
 
 /* The side navigation menu */

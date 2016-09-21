@@ -1,0 +1,40 @@
+<div id="show-head" class="container">
+<h1><%= @gallery.name %> </h1>
+    <tr>
+        <td><%= @gallery.address %> <%= @gallery.zip %></td><br>
+        <td><%= link_to @gallery.website %></td><br>
+    </tr>
+</div>
+
+  <div id="show-ex" class="container">
+    <h4 id="ex-show-header">Exhibitions</h3>
+    <div class="row">
+      <% @exhibitions.each do |exhibition| %>
+      <div class="col-md-4">
+        <%= image_tag(exhibition.image) %>
+      </div>
+      <div class="col-md-4 ex-show-info">
+        <%= exhibition.name %> <br>
+        <%= exhibition.artist.name %> <br>
+        <div id="more-button-show">
+              <p>
+                <% unless exhibition.description.nil? %>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exb<%= exhibition.id %>" aria-expanded="false" aria-controls="#exb<%= exhibition.id %>">More Info</button>
+                <% end %>
+              </p>
+              <div class="collapse" id="exb<%= exhibition.id %>">
+                <div class="card card-block">
+                  <%= exhibition.description %>
+                </div>
+              </div><!-- exhb id -->
+            </div><!-- more-button -->
+      </div>
+      <div class="col-md-4 ex-show-info">
+        <%= "#{exhibition.opening} - #{exhibition.closing}" %>
+      </div>
+      <hr>
+    </div>
+      <% end %>
+  </div>
+
+
