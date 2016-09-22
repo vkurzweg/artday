@@ -7,19 +7,15 @@ Artist.destroy_all
 User.create(name: 'test', email: 'test@email.com', password: 'abc123')
 
 galleries = Gallery.create ([
-  {name: "Gavlak", address: "1034 N Highland Avenue", zip: 90038, website: "http://www.gavlakgallery.com/"},
-  {name: "Night Gallery", address: "2276 E 16th St", zip: 90021, website: "http://nightgallery.ca/"},
-  {name: "Overduin & Co", address: "6693 Sunset Boulevard", zip: 90028, website: "http://www.overduinandco.com/"},
-  {name: "Ghebaly Gallery", address: "2245 E Washington Blvd.", zip: 90021, website: "http://ghebaly.com/"},
-  {name: "Regen Projects", address: "6750 Santa Monica Boulevard", zip: 90038, website: "http://www.regenprojects.com/"},
-  {name: "Honor Fraser", address: "2622 S. La Cienega Blvd.", zip: 90034, website: "http://www.honorfraser.com/"},
-  {name: "William Turner Gallery", address: "2525 Michigan Ave", zip: 90404, website: "http://www.williamturnergallery.com/"},
-  {name: "Hauser Wirth & Schimmel", address: "901 East 3rd Street", zip: 90013, website: "http://www.hauserwirthschimmel.com/"}
-  # {name: "", address: "", zip: , website: ""}
-  # {name: "", address: "", zip: , website: ""}
-
-
-  ])
+  {name: "Gavlak", address: "1034 N Highland Avenue", zip: 90038, website: "http://www.gavlakgallery.com/", lat: 34.089902, lng: -118.338205},
+  {name: "Night Gallery", address: "2276 E 16th St", zip: 90021, website: "http://nightgallery.ca/", lat: 34.019777, lng: -118.23173},
+  {name: "Overduin & Co", address: "6693 Sunset Boulevard", zip: 90028, website: "http://www.overduinandco.com/", lat: 34.098194, lng: -118.336103},
+  {name: "Ghebaly Gallery", address: "2245 E Washington Blvd.", zip: 90021, website: "http://ghebaly.com/", lat: 34.019231, lng: -118.231849},
+  {name: "Regen Projects", address: "6750 Santa Monica Boulevard", zip: 90038, website: "http://www.regenprojects.com/", lat: 34.0904, lng: -118.337735},
+  {name: "Honor Fraser", address: "2622 S. La Cienega Blvd.", zip: 90034, website: "http://www.honorfraser.com/", lat: 34.034719, lng: -118.377368},
+  {name: "William Turner Gallery", address: "2525 Michigan Ave", zip: 90404, website: "http://www.williamturnergallery.com/", lat: 34.027789, lng: -118.468435},
+  {name: "Hauser Wirth & Schimmel", address: "901 East 3rd Street", zip: 90013, website: "http://www.hauserwirthschimmel.com/", lat: 34.046129, lng: -118.234879}
+])
 
 
 
