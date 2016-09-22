@@ -32,7 +32,8 @@ gem 'bootstrap_form'
 gem 'paperclip', '~> 5.0.0'
 gem 'aws-sdk', '~> 2.3'
 
-
+gem 'underscore-rails'
+gem 'gmaps4rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,16 +1,70 @@
 <h1 id="g-head">Galleries in Los Angeles</h1>
+
+<div id="map-container" style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
 <div class="container galleries">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
      <% @galleries.each do |gallery| %>
       <tr id="<%=gallery.name%>">
           <td id="gallery-name"><%= link_to "#{gallery.name}", gallery_path(gallery.id) %></td><br>
           <td><%= gallery.address %> <%= gallery.zip %></td><br>
-          <td></td><br>
-          <!-- link to upcoming exhibitions -->
       </tr>
         <% end %>
     </div>
   </div>
 
 </div>
+
+
+<script>
+
+// create an array of markers for galleries
+var galleryLocs = [];
+<% @galleries.each do |g| %>
+  galleryLocs.push({
+    loc: {lat: <%= g.lat ||= 0 %>, lng: <%= g.lng ||= 0 %>},
+    name: "<%= g.name %>"
+  });
+<% end %>
+
+// might consider calculating center coordinates based
+// upon lat and lngs of the galleries that are in gallerLocs array
+var minLat, maxLat, minLng, maxLng;
+galleryLocs.forEach(function(g){
+  if (g.loc.lat) {
+    if (minLat) {
+      minLat = minLat > g.loc.lat ? g.loc.lat : minLat;
+      minLng = minLng > g.loc.lng ? g.loc.lng : minLng;
+      maxLat = maxLat < g.loc.lat ? g.loc.lat : maxLat;
+      maxLng = maxLng < g.loc.lng ? g.loc.lng : maxLng;
+    } else {
+      minLat = g.loc.lat; maxLat = g.loc.lat;
+      minLng = g.loc.lng; maxLng = g.loc.lng;
+    }
+  }
+});
+minLat = (maxLat - minLat) / 2 + minLat;
+minLng = (maxLng - minLng) / 2 + minLng;
+
+var map;
+function initMap() {
+  var latLng = {lat: -25.363, lng: 131.044};
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: minLat, lng: minLng},
+    zoom: 12
+  });
+
+  var marker;
+  galleryLocs.forEach(function(g) {
+    marker = new google.maps.Marker({
+      position: g.loc,
+      map: map,
+      title: g.name
+    });
+  })
+
+}
+</script>

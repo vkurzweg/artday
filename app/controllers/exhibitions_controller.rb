@@ -29,6 +29,8 @@ end
 
 def update
   @exhibition = Exhibition.find(params[:id])
+  params[:exhibition][:lat] = params[:exhibition][:lat].to_f
+  params[:exhibition][:lng] = params[:exhibition][:lng].to_f
   if @exhibition.update_attributes(exhibition_params)
     redirect_to exhibitions_path
   else
@@ -45,8 +47,8 @@ end
 private
 
 def exhibition_params
-      params.require(:exhibition)
-        .permit(:name, :opening, :closing, :description, :image, :photo)
-    end
+  params.require(:exhibition)
+    .permit(:name, :opening, :closing, :description, :image, :photo, :lat, :lng)
+end
 
 end

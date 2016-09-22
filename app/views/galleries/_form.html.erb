@@ -1,0 +1,46 @@
+<div class="add-background">
+  <% @gallery.errors.full_messages.each do |message| %>
+    <p class="text-danger"><strong><%= message %></strong></p>
+  <% end %>
+  <%= form_for @gallery, html: { multipart: true } do |f| %>
+    <div class="row">
+      <div class="field col-md-4">
+        <%= f.label "Gallery Name: " %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field col-md-4">
+        <%= f.label "Address: " %><br>
+        <%= f.text_field :address %>
+      </div>
+      <div class="field col-md-4">
+        <%= f.label "Zip: " %><br>
+        <%= f.text_field :zip %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field col-md-4">
+        <%= f.label "Latitude (optional): " %><br>
+        <%= f.number_field :lat, :class => 'text_field', :step => 'any' %>
+      </div>
+      <div class="field col-md-4">
+        <%= f.label "Longitude (optional): " %><br>
+        <%= f.number_field :lng, :class => 'text_field', :step => 'any' %>
+
+      </div>
+      <div class="field col-md-4">
+        <%= f.label "Website: " %><br>
+        <%= f.text_field :website %>
+      </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2">
+        <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          Add Info
+        <% end %>
+      </div>
+      <div class="col-md-2">
+        <%= link_to 'Back', galleries_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

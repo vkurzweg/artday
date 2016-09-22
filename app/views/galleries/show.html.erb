@@ -7,6 +7,7 @@
 </div>
 <div id="delete" class="container">
     <%= link_to 'Delete', gallery_path(@gallery), method: :delete, data: { confirm: "Are you sure you want to delete?"} if current_user %>
+    <%= link_to 'Edit', edit_gallery_path(@gallery) if current_user %><br>
 </div>
 <div id="show-ex" class="container">
     <h4 id="ex-show-header">Exhibitions</h3>
@@ -30,7 +31,7 @@
                 </div>
               </div><!-- exhb id -->
             </div><!-- more-button -->
-      </div>
+        </div>
       <div class="col-md-4 ex-show-info">
         <%= "#{exhibition.opening} - #{exhibition.closing}" %>
       </div>

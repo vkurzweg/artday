@@ -3,15 +3,15 @@
 <head>
   <title>Artday</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><%= image_tag("hamburger_white.png", class: "hamburger-white")%></a>
   <a href="/">ARTDAY</a>
   <a href=""></a>
   <a href=""></a>
@@ -23,6 +23,7 @@
   <p class="login-logout">
   <% if current_user %>
     <%= link_to 'Add Event', new_exhibition_path %>
+    <%= link_to 'Add Gallery', new_gallery_path %>
     <%= link_to 'Log Out', logout_path, method: :delete %>
   <% else %>
     <%= link_to 'Log In', login_path %>
@@ -46,14 +47,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAmxj0EtRi9ct_TXfjN9ZfQ8mCrTZ2Acog&callback=initMap"></script>
 </body>
 </html>

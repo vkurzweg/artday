@@ -35,8 +35,14 @@ body {
 }
 
 .hamburger {
-  height: 10vh;
+  height: 8vh;
   float: left;
+  margin-left: 55px;
+  margin-top: 5px;
+}
+
+.hamburger-white {
+  height: 8vh;
 }
 
 img {
@@ -50,6 +56,7 @@ img {
   margin-left: 100px;
 }
 
+// Exhibitions Index
 
 .display-container {
   border-bottom: .5px solid #626065;
@@ -59,20 +66,6 @@ img {
   margin-left: 250px;
 }
 
-#g-head {
-  text-align: center;
-}
-
-.galleries {
-  text-align: center;
-}
-
-.map {
-  margin-left: 200px;
-  width: 60vw;
-  height: 60vh;
-  margin-bottom: 10px;
-}
 
 #exhibit-head {
   text-align: center;
@@ -101,10 +94,31 @@ img {
   margin-top: 50px;
 }
 
+#sort {
+  text-align: right;
+}
+
+// Galleries Index
+
+#g-head {
+  text-align: center;
+}
+
+.galleries {
+  text-align: center;
+  margin-left: 450px;
+}
+
 #gallery-name {
   font-style: bold;
   font-size: 18px;
 }
+
+#map-container {
+  margin-left: 200px;
+}
+
+// Gallery Show
 
 #show-head {
   margin-left: 100px;
@@ -134,16 +148,16 @@ img {
 }
 
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
-    background-color: #181818; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: #181818;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
 }
 
 /* The navigation menu links */
@@ -156,7 +170,6 @@ img {
     transition: 0.3s
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }

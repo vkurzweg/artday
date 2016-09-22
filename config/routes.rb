@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :exhibitions, only: [:index, :create, :new, :destroy]
 
 
-  resources :galleries, only: [:index, :show, :destroy] do
+  resources :galleries do
     resources :artists, only: :index do
       resources :exhibitions, except: [:index, :create, :new]
     end
