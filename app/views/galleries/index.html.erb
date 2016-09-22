@@ -2,6 +2,7 @@
 
 <div id="map-container" style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
+  <p id="map-caption"><em>Hover over pin for gallery name</em></p>
 </div>
 
 <div class="container galleries">
@@ -30,7 +31,7 @@ var galleryLocs = [];
   });
 <% end %>
 
-// might consider calculating center coordinates based
+// calculate center coordinates based
 // upon lat and lngs of the galleries that are in gallerLocs array
 var minLat, maxLat, minLng, maxLng;
 galleryLocs.forEach(function(g){

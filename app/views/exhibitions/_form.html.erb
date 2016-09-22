@@ -31,9 +31,6 @@
         <%= f.collection_select :gallery_id, Gallery.all, :id, :name, class: "form-control" %> <br>
         <%= link_to("Or Add New Gallery", new_gallery_path) %><br>
       </div>
-
-    </div>
-    <div class="row">
       <%= f.fields_for :artists do |artist_form| %>
       <div class="field col-md-3">
         <%= artist_form.label "Artist: " %><br>

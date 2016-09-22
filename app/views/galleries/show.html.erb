@@ -6,7 +6,7 @@
     </tr>
 </div>
 <div id="delete" class="container">
-    <%= link_to 'Delete', gallery_path(@gallery), method: :delete, data: { confirm: "Are you sure you want to delete?"} if current_user %>
+    <%= link_to 'Delete', gallery_path(@gallery), method: :delete, data: { confirm: "Are you sure you want to delete?"} if current_user %><br>
     <%= link_to 'Edit', edit_gallery_path(@gallery) if current_user %><br>
 </div>
 <div id="show-ex" class="container">
