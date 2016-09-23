@@ -13,7 +13,6 @@ end
 def create
   @exhibition = Exhibition.new exhibition_params
   @artist = Artist.new params.require(:exhibition).require(:artists).permit(:name)
-  @exhibition.gallery = @gallery
   @exhibition.artist = @artist
   if @exhibition.save && @artist.save
     redirect_to exhibitions_path, notice: "Submission received - thank you!"
@@ -47,7 +46,7 @@ private
 
 def exhibition_params
   params.require(:exhibition)
-    .permit(:name, :opening, :closing, :description, :image, :photo, :lat, :lng)
+    .permit(:name, :opening, :closing, :description, :image, :photo, :lat, :lng, :gallery_id, :artist)
 end
 
 end

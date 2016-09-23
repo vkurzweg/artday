@@ -36,7 +36,7 @@ galleries[1].exhibitions.create (
   artist: Artist.create(name: "Roni Shneior & Orr Herz")})
 
 galleries[2].exhibitions.create (
-  {name: "Eros Island: Knives Please Rise", opening: '10/9/2016', closing: '22/10/2016',
+  {name: "Eros Island: Knives Please Rise", opening: '10/9/2016', closing: '22/10/2016', image: "overduin.jpg",
   artist: Artist.create(name: "Erika Vogt")})
 
 galleries[3].exhibitions.create (
