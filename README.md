@@ -1,4 +1,4 @@
-###Welcome to Artday
+##Welcome to Artday
 
 Find art in L.A.:
 
@@ -7,7 +7,7 @@ _____________________________
 
 ####Synopsis
 
-***A web application dedicated to art in Los Angeles***
+**A web application dedicated to art in Los Angeles**
 
 * Streamline information about upcoming and current exhibitions
 * Browse by gallery, artist, or exhibition opening/closing date

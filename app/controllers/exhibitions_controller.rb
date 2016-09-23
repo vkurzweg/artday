@@ -17,7 +17,7 @@ def create
   @exhibition.gallery = @gallery
   @exhibition.artist = @artist
   if @exhibition.save && @artist.save && @gallery.save
-    redirect_to exhibitions_path, notice: "Submission received. Thank you!"
+    redirect_to exhibitions_path, notice: "Submission received - thank you!"
   else
     render 'new'
   end

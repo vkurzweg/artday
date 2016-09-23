@@ -17,6 +17,15 @@ def new
   @gallery = Gallery.new
 end
 
+def create
+  @gallery = Gallery.new gallery_params
+  if @gallery.save
+    redirect_to galleries_path, notice: "Gallery added - thank you"
+  else
+    render 'new'
+  end
+end
+
 def update
   @gallery = Gallery.find(params[:id])
   if @gallery.update_attributes(gallery_params)
