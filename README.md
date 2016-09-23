@@ -7,7 +7,7 @@ _____________________________
 
 ####Synopsis
 
-**A web application dedicated to art in Los Angeles**
+**A web application for people who want more exposure to art in Los Angeles**
 
 * Streamline information about upcoming and current exhibitions
 * Browse by gallery, artist, or exhibition opening/closing date
@@ -16,7 +16,7 @@ _____________________________
 
 ####Development
 
-Designed in a UX course and produced in a web development program, this app is for people who want more exposure to art in L.A. Users interviewed said they would like to attend more art events but that information about them is scattered among too many sources.
+This app was designed in a UX course at General Assembly and produced in its web development program. Users interviewed said they would like to attend more art events but that information about them is scattered among too many sources.
 
 Wireframes, ERD, etc. available here:
 
