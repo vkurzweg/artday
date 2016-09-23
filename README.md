@@ -7,7 +7,7 @@ _____________________________
 
 ####Synopsis
 
-**A web application dedicated to art in Los Angeles**
+**A web application for art in Los Angeles**
 
 * Streamline information about upcoming and current exhibitions
 * Browse by gallery, artist, or exhibition opening/closing date
@@ -16,13 +16,15 @@ _____________________________
 
 ####Development
 
-This app was designed in a UX course at General Assembly and produced in its web development program. Users interviewed said they would like to attend more art events but that information about them is scattered among too many sources.
+This app was designed in a UX course at General Assembly and built in GA's immersive web development program.
 
-Wireframes, ERD, etc. available here:
+Preliminary user interviews indicated that people would like to attend more art events but it can be difficult to find information about them, as it is scattered among too many sources.
+
+User stories, wireframes, ERD, etc. available here:
 
 https://trello.com/b/4EDtMXBT/wdi-project-2
 
-Artday was built using Ruby on Rails, JavaScript, HTML and CSS. Also incorporated: Bootstrap, Paperclip, Google Maps API.
+Artday was built using Ruby on Rails, JavaScript, HTML and CSS. Also incorporated: Bootstrap, Paperclip and Google Maps API.
 
 ####Icebox Features
 
